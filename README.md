@@ -36,6 +36,3 @@ Este script cria o banco de dados SQLite e a tabela necessária para armazenar a
 O banco de dados possui a seguinte estrutura:
 - Tabela `companhia`: `id` (chave primária), `cnpj_cia`, `denom_social`, `sit`, `data`.
 
-
-Atenciosamento, Kauê Negrini Ciglioni
-
