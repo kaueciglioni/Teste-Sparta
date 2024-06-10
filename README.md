@@ -1,47 +1,38 @@
-# Sistema de Consulta de Companhias Abertas
+# Teste para o processo seletivo da Sparta Investimentos
+Nesse projeto, de maneira básica e com o aprendizado acadêmico foi criado 3 scripts para rodar de forma respectivas, onde criamos o banco de dados com a planilha fornecida, importação do dados para o banco de dados, e por útlimo uma query para realizar a consulta das informações além de alguns inputs para facilidade no entedimentos da informações consultadas.
 
-Este é um projeto em Python para persistir informações sobre companhias abertas em um banco de dados e permitir a consulta dessas informações posteriormente. Os dados são extraídos de um arquivo CSV fornecido pelo usuário.
+Apenas de biblioteca usamos o , PANDAS, REQUEST, SQLITE, por facilidade no manuseio e trabalhar na linguagem SQL, onde ele no próprio VSC cria um banco de dados com todos os dados importados, e traz pra você um representação de tabela.
+Dificuldade apenas com o nivel de complexidade do uso de banco de dados, onde temos que ter todo o cuidado para a configuração do banco de dados, onde através do pandas é puxada todas as informações solicitadas no processo.
 
-## Requisitos
+Foram adicionadas informações a mais para que possa ter um melhor entendimento, e também para a informação mais próxima da completa no banco de dados.
 
-- Python 3.x
-- SQLite (biblioteca padrão do Python)
 
-## Instalação
+## Sistema de Consulta de Companhias Abertas
 
-1. Clone este repositório:
+Este sistema em Python permite persistir informações sobre companhias abertas em um banco de dados SQLite e consultar essas informações posteriormente. Ele consiste em três scripts:
 
-git clone https://github.com/kaueciglioni/teste-sparta.git
+### import_data.py
 
-2. Navegue até o diretório do projeto:
+Este script importa os dados do arquivo CSV fornecido pelo usuário para o banco de dados SQLite.
 
-cd nome-do-repositorio
+### query_data.py
 
-3. Instale as dependências:
+Este script permite consultar as informações das companhias armazenadas no banco de dados SQLite. Ele solicitará que o usuário insira o CNPJ da empresa e, opcionalmente, uma data específica para consultar informações em datas passadas.
 
-pip install -r requirements.txt
+### create_database.py
 
-## Uso
+Este script cria o banco de dados SQLite e a tabela necessária para armazenar as informações das companhias.
 
-1. Execute o script import_data.py para importar os dados do arquivo CSV para o banco de dados:
+# Utilização 
 
-python import_data.py caminho/do/seu/arquivo.csv
+1. **Instalação**: Clone este repositório.
 
-Substitua caminho/do/seu/arquivo.csv pelo caminho para o seu arquivo CSV.
+2. **Criar o Banco de Dados**: Execute `python create_database.py`.
 
-2. Após a importação dos dados, você pode executar o script query_data.py para consultar as informações das companhias:
+3. **Importar Dados**: Importe os dados do arquivo CSV para o banco de dados com `python import_data.py caminho/do/seu/arquivo.csv`.
 
-python query_data.py
+4. **Consultar Informações**: Execute `python query_data.py` e siga as instruções no terminal para consultar as informações das companhias.
 
-Siga as instruções no terminal para inserir o CNPJ da empresa que você deseja consultar. Você também pode optar por fornecer uma data específica para consultar informações em datas passadas.
+O banco de dados possui a seguinte estrutura:
+- Tabela `companhia`: `id` (chave primária), `cnpj_cia`, `denom_social`, `sit`, `data`.
 
-## Estrutura do Banco de Dados
-
-O banco de dados SQLite possui a seguinte estrutura:
-
-- Tabela companhia:
-  - id (INTEGER, chave primária)
-  - cnpj_cia (TEXT)
-  - denom_social (TEXT)
-  - sit (TEXT)
-  - data (TEXT)
